@@ -1,3 +1,4 @@
+// src/components/SearchBar/index.js
 import React, {useState} from 'react'
 import './index.css'
 
@@ -8,7 +9,7 @@ function SearchBar({onSearch}) {
     const newSearchTerm = event.target.value
     setSearchTerm(newSearchTerm)
     if (onSearch) {
-      onSearch(newSearchTerm) // Call onSearch on every change
+      onSearch(newSearchTerm)
     }
   }
 
@@ -20,7 +21,7 @@ function SearchBar({onSearch}) {
     <form onSubmit={handleSubmit} className="search-bar">
       <input
         type="text"
-        placeholder="Search for recipes "
+        placeholder="Search for recipes or ingredients"
         value={searchTerm}
         onChange={handleChange}
       />

@@ -13,6 +13,16 @@ function RecipeCard({recipe}) {
         <Link to={`/recipe/${recipe.idMeal}`} className="view-details-link">
           View Details
         </Link>
+        <button
+          onClick={() => {
+            const shareUrl = `${window.location.origin}/recipe/${recipe.idMeal}`
+            navigator.clipboard.writeText(shareUrl)
+            alert('Recipe link copied to clipboard!')
+          }}
+          className="share-button"
+        >
+          Share
+        </button>
       </div>
     </div>
   )

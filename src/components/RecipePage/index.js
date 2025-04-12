@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 import './index.css'
 
 export const sampleRecipes = [
-  // Add 'export' keyword
+  // Add 'export' keyword to sampleRecipes
   {
     idMeal: '1',
     strMeal: 'Homemade Pizza',
@@ -79,8 +79,12 @@ export const sampleRecipes = [
 ]
 
 function RecipePage({searchTerm}) {
-  const filteredRecipes = sampleRecipes.filter(recipe =>
-    recipe.strMeal.toLowerCase().includes(searchTerm.toLowerCase()),
+  const filteredRecipes = sampleRecipes.filter(
+    recipe =>
+      recipe.strMeal.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      recipe.ingredients.some(ingredient =>
+        ingredient.toLowerCase().includes(searchTerm.toLowerCase()),
+      ),
   )
 
   return (
