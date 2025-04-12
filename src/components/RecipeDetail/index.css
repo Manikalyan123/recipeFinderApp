@@ -1,0 +1,37 @@
+/* src/components/RecipeDetail/RecipeDetail.css */
+.recipe-details-container {
+  padding: 20px;
+}
+
+.recipe-image-details {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+
+.recipe-info-details p {
+  margin-bottom: 5px;
+  font-style: italic;
+  color: #777;
+}
+
+.recipe-details-container h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.recipe-details-container ul {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.recipe-details-container li {
+  margin-bottom: 5px;
+}
+
+.recipe-instructions {
+  line-height: 1.6;
+  white-space: pre-line; /* Preserve line breaks from API */
+}
