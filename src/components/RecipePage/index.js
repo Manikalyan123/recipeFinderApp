@@ -3,38 +3,82 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import './index.css'
 
-function RecipePage({searchTerm}) {
-  // Receive searchTerm as a prop
-  const sampleRecipes = [
-    {
-      idMeal: '1',
-      strMeal: 'Homemade Pizza',
-      strInstructions: 'Make the dough, add toppings, and bake!',
-    },
-    {
-      idMeal: '2',
-      strMeal: 'Classic Burger',
-      strInstructions: 'Grill the patty, assemble with your favorite toppings.',
-    },
-    {
-      idMeal: '3',
-      strMeal: 'Spaghetti and Meatballs',
-      strInstructions:
-        'Cook the spaghetti, prepare the meatballs, and combine with sauce.',
-    },
-    {
-      idMeal: '4',
-      strMeal: 'Chicken Stir-Fry',
-      strInstructions:
-        'Stir-fry chicken and vegetables with your choice of sauce.',
-    },
-    {
-      idMeal: '5',
-      strMeal: 'Chocolate Cake',
-      strInstructions: 'Bake a rich chocolate cake and frost it.',
-    },
-  ]
+export const sampleRecipes = [
+  // Add 'export' keyword
+  {
+    idMeal: '1',
+    strMeal: 'Homemade Pizza',
+    strInstructions:
+      'Preheat oven to 450°F. Stretch dough, spread sauce, add cheese and toppings. Bake for 15-20 minutes.',
+    ingredients: [
+      'Pizza dough',
+      'Tomato sauce',
+      'Mozzarella cheese',
+      'Pepperoni',
+      'Mushrooms',
+    ],
+  },
+  {
+    idMeal: '2',
+    strMeal: 'Classic Burger',
+    strInstructions:
+      'Grill patty to desired doneness. Toast bun. Assemble with lettuce, tomato, onion, and condiments.',
+    ingredients: [
+      'Ground beef',
+      'Burger buns',
+      'Lettuce',
+      'Tomato',
+      'Onion',
+      'Ketchup',
+      'Mustard',
+    ],
+  },
+  {
+    idMeal: '3',
+    strMeal: 'Spaghetti and Meatballs',
+    strInstructions:
+      'Cook spaghetti according to package directions. Brown meatballs in a pan. Simmer in tomato sauce. Serve over spaghetti.',
+    ingredients: [
+      'Spaghetti',
+      'Ground meat',
+      'Breadcrumbs',
+      'Egg',
+      'Parmesan cheese',
+      'Tomato sauce',
+    ],
+  },
+  {
+    idMeal: '4',
+    strMeal: 'Chicken Stir-Fry',
+    strInstructions:
+      'Cut chicken and vegetables into bite-sized pieces. Stir-fry chicken until cooked through. Add vegetables and sauce. Cook until tender.',
+    ingredients: [
+      'Chicken breast',
+      'Broccoli florets',
+      'Carrots',
+      'Bell peppers',
+      'Soy sauce',
+      'Ginger',
+    ],
+  },
+  {
+    idMeal: '5',
+    strMeal: 'Chocolate Cake',
+    strInstructions:
+      'Preheat oven to 350°F. Mix dry ingredients, then wet ingredients. Bake for 30-35 minutes. Frost when cooled.',
+    ingredients: [
+      'Flour',
+      'Sugar',
+      'Cocoa powder',
+      'Eggs',
+      'Milk',
+      'Butter',
+      'Frosting',
+    ],
+  },
+]
 
+function RecipePage({searchTerm}) {
   const filteredRecipes = sampleRecipes.filter(recipe =>
     recipe.strMeal.toLowerCase().includes(searchTerm.toLowerCase()),
   )
